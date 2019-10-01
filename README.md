@@ -12,7 +12,7 @@ In order to run this project you will need to provide your own API KEY from [The
 THE_MOVIE_DB_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
-This is needed because the following entry in the `build.gradle` file will pull that value at build time and place it in the `BuildConfig` class so it can be used in the code. This allows you to use a local API KEY that will not be added to source control:
+This is needed because the following entry in the `build.gradle` file will pull that value at build time and place it in the `BuildConfig` class:
 
 ```
     defaultConfig {
@@ -21,6 +21,8 @@ This is needed because the following entry in the `build.gradle` file will pull 
         buildConfigField "String", "THE_MOVIE_DB_API_KEY", properties.getProperty("THE_MOVIE_DB_API_KEY")
     }
 ```
+ The value of the API KEY can be used statically with `BuildConfig.THE_MOVIE_DB_API_KEY` in code. This approach allows you to use a local API KEY that will not be added to source control:
+ 
 
 ## Overview of Code Structure
 
