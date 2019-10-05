@@ -3,6 +3,8 @@ I created this project to do an instructional walkthrough of MVVM, Databinding a
 
 I will be adding a presentation slide deck to accompany the code soon.
 
+![](presentation/TheMovieDb_example.gif)
+
 ## Project Setup
 
 ### API Key for The Movie DB
