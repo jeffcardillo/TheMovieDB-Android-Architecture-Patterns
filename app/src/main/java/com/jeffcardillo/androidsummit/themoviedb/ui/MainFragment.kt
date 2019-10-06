@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jeffcardillo.androidsummit.themoviedb.R
 import com.jeffcardillo.androidsummit.themoviedb.databinding.MainFragmentBinding
-import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : Fragment() {
 
@@ -30,7 +29,6 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // FragmentDataBinding because of file name
         binding = DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false)
 
         val root = binding.root
@@ -49,9 +47,7 @@ class MainFragment : Fragment() {
 
         // required to get button clicks
         binding.viewModel = viewModel
-
-        viewModel.sortButtonText.observe(this, Observer<String> {
-                buttonTitle -> sort_button.text = buttonTitle })
+        binding.sortController = viewModel.sortController
 
         viewModel.getPopularMovies().observe(this,
             Observer<List<TheMovieDbMovie>> { movieList ->

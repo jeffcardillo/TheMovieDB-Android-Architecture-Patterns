@@ -16,9 +16,7 @@ class MainViewModel : ViewModel() {
 
     private var movieList: MutableLiveData<List<TheMovieDbMovie>>? = null
 
-    var sortButtonText: MutableLiveData<String> = MutableLiveData("Sort A...Z")
-
-    var ascending = false
+    var sortController = SortController()
 
     fun getPopularMovies() : LiveData<List<TheMovieDbMovie>> {
         if (movieList == null) {
@@ -29,19 +27,16 @@ class MainViewModel : ViewModel() {
         return movieList as LiveData<List<TheMovieDbMovie>>
     }
 
-    fun sortMovies(ascending : Boolean) {
+    fun sortMovies() {
         movieList?.let {
-            if (ascending) {
+            if (sortController.sortAscending) {
                 movieList?.setValue(movieList?.value?.sortedBy { it.title })
-                sortButtonText.setValue("Sort Z...A")
             } else {
                 movieList?.setValue(movieList?.value?.sortedByDescending { it.title })
-                sortButtonText.setValue("Sort A...Z")
             }
         }
 
-        this.ascending = ascending
-
+        sortController.switchNextSortDirection()
     }
 
     private fun loadPopularMovies() {
@@ -55,9 +50,7 @@ class MainViewModel : ViewModel() {
                 } else {
                     Log.d("MainViewModel ", response.errorBody().toString())
                 }
-            } catch (e: Exception) {
-
-            }
+            } catch (e: Exception) { }
         }
     }
 }

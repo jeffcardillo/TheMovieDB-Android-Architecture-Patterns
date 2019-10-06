@@ -4,6 +4,10 @@
         <variable
             name="viewModel"
             type="com.jeffcardillo.androidsummit.themoviedb.ui.MainViewModel"/>
+
+        <variable
+            name="sortController"
+            type="com.jeffcardillo.androidsummit.themoviedb.ui.SortController"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             layout_constraintTop_toTopOf="parent"
-            android:onClick="@{() -> viewModel.sortMovies(!viewModel.ascending)}" />
+            android:text="@{sortController.nextSortText}"
+            android:onClick="@{() -> viewModel.sortMovies()}" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
