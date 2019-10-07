@@ -35,7 +35,7 @@ The `View` in this example project is the `MainFragment` class and layout. This 
 
 The `ModelView` is implemented in a class called `MainViewModel`. This class will fetch new data from the data model when needed, and transform (sort) the data when an event is passed to it from the UI layer.
 
-The `Model` is provided by the `ApiFactory` class where an instance of _The Movie DB_ API retrofit object is created.
+The `Model` is represented as a `TheMovieDbMovie` object and the data is provided by the `ApiFactory` class (where an instance of _The Movie DB_ API retrofit object is created).
 
 ### DataBinding
 

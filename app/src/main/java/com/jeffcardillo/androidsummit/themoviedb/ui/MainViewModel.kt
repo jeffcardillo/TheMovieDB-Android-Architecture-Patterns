@@ -27,18 +27,6 @@ class MainViewModel : ViewModel() {
         return movieList as LiveData<List<TheMovieDbMovie>>
     }
 
-    fun sortMovies() {
-        movieList?.let {
-            if (sortController.sortAscending) {
-                movieList?.setValue(movieList?.value?.sortedBy { it.title })
-            } else {
-                movieList?.setValue(movieList?.value?.sortedByDescending { it.title })
-            }
-        }
-
-        sortController.switchNextSortDirection()
-    }
-
     private fun loadPopularMovies() {
         viewModelScope.launch(Dispatchers.Main) {
             val popularMovieRequest = popularMovieService.getPopularMovieAsync()
@@ -52,5 +40,17 @@ class MainViewModel : ViewModel() {
                 }
             } catch (e: Exception) { }
         }
+    }
+
+    fun sortMovies() {
+        movieList?.let {
+            if (sortController.sortAscending) {
+                movieList?.setValue(movieList?.value?.sortedBy { it.title })
+            } else {
+                movieList?.setValue(movieList?.value?.sortedByDescending { it.title })
+            }
+        }
+
+        sortController.switchNextSortDirection()
     }
 }

@@ -45,7 +45,6 @@ class MainFragment : Fragment() {
 
         viewModel = MainViewModel()
 
-        // required to get button clicks
         binding.viewModel = viewModel
         binding.sortController = viewModel.sortController
 
