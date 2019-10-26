@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.jeffcardillo.androidsummit.themoviedb.api.TheMovieDbMovie
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,8 +16,8 @@ import com.jeffcardillo.androidsummit.themoviedb.databinding.MainFragmentBinding
 
 class MainFragment : Fragment() {
 
-    var recyclerView: RecyclerView? = null
-    var adapter: MovieAdapter? = null
+    private var recyclerView: RecyclerView? = null
+    private var adapter: MovieAdapter? = null
     lateinit var binding: MainFragmentBinding
 
     companion object {
@@ -43,7 +44,7 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModel = MainViewModel()
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         binding.viewModel = viewModel
         binding.sortController = viewModel.sortController
