@@ -12,7 +12,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 object RetrofitEndpointFactory {
 
     private val theMovieDbAuthInterceptor = Interceptor { chain->
-        val url = chain.request().url()
+        val url = chain.request().url
             .newBuilder()
             .addQueryParameter("api_key", BuildConfig.THE_MOVIE_DB_API_KEY)
             .build()
