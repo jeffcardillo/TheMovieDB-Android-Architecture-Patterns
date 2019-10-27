@@ -1,9 +1,9 @@
 # TheMovieDB-Android-Architecture-Patterns
 I created this project to do an instructional walkthrough of Model-View-ViewModel (MVVM), Data-binding and LiveData to fellow engineers at my workplace. I'm using TheMovieDB API to fetch interesting data and show beautiful movie posters in this demo.
 
-A presentation file is available [(presentation/MVVM with Data Binding.pdf)](https://github.com/jeffcardillo/TheMovieDB-Android-Architecture-Patterns/blob/master/presentation/MVVM%20with%20Data%20Binding.pdf) that covers the stated patterns above. Please note that the format of the workshop will have attendees begin with a starter project - most of the code in the project is available but the specific pattern code is omitted. The goal is to then walk through the code and implement the patterns together. The starter project may not be added to this public github repository, but I wanted to outline why the presentation is formatted the way it is.
-
 ![](presentation/TheMovieDb_example.gif)
+
+A presentation file is available [(presentation/MVVM with Data Binding.pdf)](https://github.com/jeffcardillo/TheMovieDB-Android-Architecture-Patterns/blob/master/presentation/MVVM%20with%20Data%20Binding.pdf) that covers the specified patterns above. Please note that the format of the workshop will have attendees begin with a starter project - most of the code in the project is available but the specific pattern code is omitted. The goal is to then walk through the code and implement the patterns together. The starter project may not be added to this public github repository, but I wanted to outline why the presentation is formatted the way it is.
 
 ## Project Setup
 
