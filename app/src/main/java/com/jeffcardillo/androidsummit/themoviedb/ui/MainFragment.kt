@@ -49,7 +49,7 @@ class MainFragment : Fragment() {
         binding.viewModel = viewModel
         binding.sortController = viewModel.sortController
 
-        viewModel.getPopularMovies().observe(this,
+        viewModel.getPopularMovies().observe(viewLifecycleOwner,
             Observer<List<TheMovieDbMovie>> { movieList ->
                 activity?.let {
                     adapter = MovieAdapter(it, movieList)
